@@ -49,15 +49,7 @@
                 <!-- /.dropdown-user -->
             </li>
             <!-- /.dropdown -->
-
-
         </ul>
-
-
-
-
-
-
         {{--<ul class="nav navbar-nav navbar-right">--}}
         {{--@if(auth()->guest())--}}
         {{--@if(!Request::is('auth/login'))--}}
@@ -78,10 +70,6 @@
         {{--@endif--}}
         {{--</ul>--}}
 
-
-
-
-
         <div class="navbar-default sidebar" role="navigation">
             <div class="sidebar-nav navbar-collapse">
                 <ul class="nav" id="side-menu">
@@ -99,54 +87,42 @@
                     <li>
                         <a href="/admin"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                     </li>
-
                     <li>
                         <a href="#"><i class="fa fa-wrench fa-fw"></i>Users<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="/users">All Users</a>
                             </li>
-
                             <li>
                                 <a href="/users/create">Create User</a>
                             </li>
-
                         </ul>
                         <!-- /.nav-second-level -->
                     </li>
-
                     <li>
                         <a href="#"><i class="fa fa-wrench fa-fw"></i> Posts<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="/posts">All Posts</a>
                             </li>
-
                             <li>
                                 <a href="/posts/create">Create Post</a>
                             </li>
-
                         </ul>
                         <!-- /.nav-second-level -->
                     </li>
-
-
                     <li>
                         <a href="#"><i class="fa fa-wrench fa-fw"></i>Categories<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="/categories">All Categories</a>
                             </li>
-
                             <li>
                                 <a href="/categories/create">Create Category</a>
                             </li>
-
                         </ul>
                         <!-- /.nav-second-level -->
                     </li>
-
-
                     <li>
                         <a href="#"><i class="fa fa-wrench fa-fw"></i>Media<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
@@ -161,13 +137,6 @@
                         </ul>
                         <!-- /.nav-second-level -->
                     </li>
-
-
-
-
-
-
-
                     <li>
                         <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
@@ -253,28 +222,17 @@
                         <!-- /.nav-second-level -->
                     </li>
                 </ul>
-
-
             </div>
             <!-- /.sidebar-collapse -->
         </div>
         <!-- /.navbar-static-side -->
     </nav>
-
-
-
-
-
     <div class="navbar-default sidebar" role="navigation">
         <div class="sidebar-nav navbar-collapse">
             <ul class="nav" id="side-menu">
                 <li>
                     <a href="/profile"><i class="fa fa-dashboard fa-fw"></i>Profile</a>
                 </li>
-
-
-
-
                 <li>
                     <a href="#"><i class="fa fa-wrench fa-fw"></i> Posts<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
@@ -289,24 +247,10 @@
                     </ul>
                     <!-- /.nav-second-level -->
                 </li>
-
-
-
-
-
             </ul>
-
         </div>
-
     </div>
-
 </div>
-
-
-
-
-
-
 <!-- Page Content -->
 <div id="page-wrapper">
     <div class="container-fluid">
@@ -323,20 +267,10 @@
     <!-- /.container-fluid -->
 </div>
 <!-- /#page-wrapper -->
-
 </div>
 <!-- /#wrapper -->
-
 <!-- jQuery -->
 <script src="{{asset('js/libs.js')}}"></script>
-
-
 @yield('footer')
-
-
-
-
-
 </body>
-
 </html>
