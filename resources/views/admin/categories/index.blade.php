@@ -15,7 +15,6 @@
     <h1>Categories</h1>
 
     <div class="col-md-4">
-        <h1>Add Category</h1>
          {!! Form::open(['method'=>'POST', 'action'=>'AdminCategoriesController@store']) !!}
                      <div class="form-group">
                           {!! Form::label('name', 'Name:') !!}
@@ -29,23 +28,6 @@
                           {!! Form::submit('Create Category', ['class'=>'btn btn-primary']) !!}
                       </div>
          {!! Form::close() !!}
-
-        <hr>
-
-        <h1>Edit Category</h1>
-        {!! Form::open(['method'=>'POST', 'action'=>'AdminCategoriesController@store']) !!}
-        <div class="form-group">
-            {!! Form::label('name', 'Name:') !!}
-            {!! Form::text('name', null, ['class'=>'form-control']) !!}
-        </div>
-        <div class="form-group">
-            {!! Form::label('order', 'Order:') !!}
-            {!! Form::text('order', null, ['class'=>'form-control']) !!}
-        </div>
-        <div class="form-group">
-            {!! Form::submit('Create Category', ['class'=>'btn btn-primary']) !!}
-        </div>
-        {!! Form::close() !!}
     </div>
 
     <div class="col-md-8">
