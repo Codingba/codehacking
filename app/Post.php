@@ -6,15 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    protected $fillable = [
-        'category_id', 'title', 'body', 'photo_id'
-    ];
+    protected $fillable = ['category_id', 'title', 'body', 'photo_id'];
 
     public function user() {
         return $this->belongsTo('App\User');
     }
 
-   public function photo() {
+    public function photo() {
         return $this->belongsTo('App\Photo');
     }
 

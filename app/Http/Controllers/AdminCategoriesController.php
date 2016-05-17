@@ -12,8 +12,8 @@ class AdminCategoriesController extends Controller
 {
     public function index()
     {
-        // $categories = Category::all()->orderBy('order', 'desc')->get();
-        $categories = Category::all();
+        $categories = Category::orderBy('order', 'asc')->get();
+        // $categories = Category::all();
         return view('admin.categories.index', compact('categories'));
     }
 
