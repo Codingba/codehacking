@@ -3,18 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Comment;
-use App\Post;
+use App\CommentReply;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
 
-class PostCommentsController extends Controller
+class CommentRepliesController extends Controller
 {
     public function index()
     {
-       $comments = Comment::all();
-       return view('admin.comments.index', compact('comments'));
+        //
     }
 
     public function create()
@@ -24,41 +23,45 @@ class PostCommentsController extends Controller
 
     public function store(Request $request)
     {
+        //
+    }
+
+    public function createReply(Request $request)
+    {
         $user = Auth::user();
         $data = [
-            'post_id' => $request->post_id,
+            'comment_id' => $request->comment_id,
             'author' => $user->name,
             'email' => $user->email,
             'photo' => $user->photo->file,
             'body' => $request->body
         ];
-        Comment::create($data);
-        $request->session()->flash('comment_message', 'Your mwessage has been submitted and is waiting for moderation');
+        CommentReply::create($data);
+        $request->session()->flash('reply_message', 'Your reply message has been submitted and is waiting for moderation');
         return redirect()->back();
     }
 
     public function show($id)
     {
-        $post = Post::findOrFail($id);
-        $comments = $post->comments;
-        // dd($comment);
-        return view('admin.comments.show', compact('comments'));
+        $comment = Comment::findOrFail($id);
+        $replies = $comment->replies;
+       return view('admin.comments.replies.show', compact('replies'));
     }
 
     public function edit($id)
     {
-
+        //
     }
 
     public function update(Request $request, $id)
     {
-        Comment::findOrFail($id)->update($request->all());
-        return redirect('/admin/comments');
+        CommentReply::findOrFail($id)->update($request->all());
+        return redirect()->back();
     }
 
     public function destroy($id)
     {
-        Comment::findOrFail($id)->delete();
+        CommentReply::findOrFail($id)->delete();
         return redirect()->back();
     }
 }
