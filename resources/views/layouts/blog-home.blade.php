@@ -65,6 +65,9 @@
 <!-- Page Content -->
 <div class="container">
     <div class="row">
+        @if(Session::has('registrovan'))
+            <p class="bg-success">{{session('registrovan')}}</p>
+        @endif
         <!-- Blog Entries Column -->
         @yield('content')
 

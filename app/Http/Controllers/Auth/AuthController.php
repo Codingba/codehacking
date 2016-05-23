@@ -13,7 +13,7 @@ class AuthController extends Controller
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
-    protected $redirectTo = '/admin';
+    protected $redirectTo = '/';
 
     public function __construct()
     {
@@ -36,5 +36,7 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+       Session::flash('registrovan', 'You are registread, weit for access from admin');
+//        return redirect('/');
     }
 }
