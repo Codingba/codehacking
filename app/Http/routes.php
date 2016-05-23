@@ -1,8 +1,10 @@
 <?php
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+Route::get('/', 'AdminPostsController@home');
 
 Route::auth();
 
@@ -28,6 +30,8 @@ Route::group(['middleware' => 'admin'], function(){
     Route::resource('admin/comments', 'PostCommentsController');
 
     Route::resource('admin/comment/replies', 'CommentRepliesController');
+
+    Route::resource('admin/roles', 'AdminRolesController');
 
 });
 

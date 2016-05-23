@@ -3,14 +3,10 @@
 @section('content')
 
 <h1>{{ $post->title }}</h1>
-
-<!-- Author -->
 <p class="lead">by <a href="#">{{ $post->user->name }}</a></p>
 <hr>
-<!-- Date/Time -->
 <p><span class="glyphicon glyphicon-time"></span> Posted {{ $post->created_at->diffForHumans() }}</p>
 <hr>
-<!-- Preview Image -->
 <img class="img-responsive" src="{{ $post->photo->file }}" alt="">
 <hr>
 <!-- Post Content -->
@@ -36,7 +32,6 @@
      {!! Form::close() !!}
 </div>
 @endif
-<hr>
 
 @if(count($comments) > 0)
         @foreach($comments as $comment)
@@ -44,6 +39,7 @@
             <div class="media">
                 <a class="pull-left" href="#">
                     <img height="64" class="media-object" src="{{$comment->photo}}" alt="">
+                    {{--<img height="64" class="media-object" src="{{Auth::user()->gravatar}}" alt="">--}}
                 </a>
                 <div class="media-body">
                     <h4 class="media-heading">{{$comment->author}}
@@ -72,6 +68,7 @@
          @endif
                 </div>
             </div>
+         @if(Auth::check())
                 <div class="comment-reply-container">
                     <button class="toggle-reply btn btn-primary pull-right">Reply</button>
                     <div class="comment-reply col-md-12">
@@ -87,6 +84,7 @@
                         {!! Form::close() !!}
                     </div>
                 </div>
+        @endif
       @endforeach
 @endif
 

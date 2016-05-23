@@ -84,7 +84,6 @@
                                     </button>
                                 </span>
                         </div>
-                        <!-- /input-group -->
                     </li>
                     <li>
                         <a href="/admin"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
@@ -99,7 +98,14 @@
                                 <a href="{{route('admin.users.create')}}">Create User</a>
                             </li>
                         </ul>
-                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-wrench fa-fw"></i>Role<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="{{route('admin.roles.index')}}">All Role</a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-wrench fa-fw"></i> Posts<span class="fa arrow"></span></a>
